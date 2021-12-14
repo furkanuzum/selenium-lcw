@@ -25,7 +25,7 @@ public class Test_Add_Product_To_Cart extends Base_Test {
     @Test
     @Order(2)
     public void search_a_Product() {
-        login();
+        //login();
         homePage = new HomePage(driver);
         productsPage = new ProductsPage(driver);
         homePage.searchBox().search("pantolon");
@@ -36,7 +36,7 @@ public class Test_Add_Product_To_Cart extends Base_Test {
     @Test
     @Order(3)
     public void select_a_Product() {
-        search_a_Product();
+        //search_a_Product();
         productDetailPage = new ProductDetailPage(driver);
         productsPage.selectRandomProduct();
         Assertions.assertTrue(productDetailPage.isOnProductDetailPage(),
@@ -46,7 +46,7 @@ public class Test_Add_Product_To_Cart extends Base_Test {
     @Test
     @Order(4)
     public void add_Product_a_cart() {
-        select_a_Product();
+        //select_a_Product();
         priceInProductPage = productDetailPage.getPrice();
         productDetailPage.addToCart();
         Assertions.assertTrue(homePage.isProductCountUp(),
@@ -57,7 +57,7 @@ public class Test_Add_Product_To_Cart extends Base_Test {
     @Test
     @Order(5)
     public void go_to_cart() {
-        add_Product_a_cart();
+        //add_Product_a_cart();
         cartPage = new CartPage(driver);
         homePage.goToCart();
         Assertions.assertTrue(cartPage.checkIfProductAdded(),
