@@ -13,7 +13,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 
-public class Base_Test {
+public class BaseTest {
     static WebDriver driver;
 
     @BeforeAll
@@ -26,7 +26,7 @@ public class Base_Test {
 
     @AfterAll
     public void tearDown() {
-    //    driver.quit();
+        driver.quit();
     }
     public void wait(int ms){
         try {

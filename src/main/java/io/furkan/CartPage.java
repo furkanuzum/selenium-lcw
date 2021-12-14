@@ -41,6 +41,7 @@ public class CartPage extends BasePage {
 
     public void deleteBasket() {
         click(productDeleteLocator);
+        wait(1000);
         click(productScDeleteLocator);
     }
 

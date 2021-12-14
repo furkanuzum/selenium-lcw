@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
-public class Test_Add_Product_To_Cart extends Base_Test {
+public class Test_Add_Product_To_Cart extends BaseTest {
     HomePage homePage;
     ProductsPage productsPage;
     ProductDetailPage productDetailPage;
@@ -17,8 +17,8 @@ public class Test_Add_Product_To_Cart extends Base_Test {
     public void login(){
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
-        wait(10000);
         homePage.clickLogin();
+        wait(2000);
         loginPage.login("furkanuzum61@gmail.com", "*Ybkrzg(9%t_YZNb");
     }
 
@@ -28,8 +28,8 @@ public class Test_Add_Product_To_Cart extends Base_Test {
         //login();
         homePage = new HomePage(driver);
         productsPage = new ProductsPage(driver);
+        wait(2000);
         homePage.searchBox().search("pantolon");
-        wait(3000);
         productsPage.loadMore();
     }
 
@@ -71,6 +71,7 @@ public class Test_Add_Product_To_Cart extends Base_Test {
         Assertions.assertEquals(2, quantity, "quantity was not inremented");
 
         cartPage.deleteBasket();
+        wait(1000);
         Assertions.assertTrue(cartPage.isBasketEmpty(),"Basket is not empty");
 
     }
